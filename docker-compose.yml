@@ -1,6 +1,5 @@
 version: '3'
 services:
-
   post-db:
     image: postgres
     restart: always

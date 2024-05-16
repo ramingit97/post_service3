@@ -8,16 +8,23 @@ import { IToken } from '@src/features/tokens/token.interface';
 import { Gender, UserRole } from './user.interface';
 import { UserRepository } from './repo/user.repository';
 import { RpcException } from '@nestjs/microservices';
+// import { TestService } from '../test/test.service';
 
 @Injectable()
 export class UserService {
 
     constructor(
-            private readonly userRepo:UserRepository,
-            private jwtService:JwtService,
-            private config:ConfigService,
-            private tokenService:TokenService,
+        private readonly userRepo:UserRepository,
+        private jwtService:JwtService,
+        private config:ConfigService,
+        private tokenService:TokenService,
+        // private testService:TestService
     ){}
+
+
+    // async test(){
+    //     return this.testService.test()
+    // }
 
 
     async register({email,name,password,role}:UserCreateDto){

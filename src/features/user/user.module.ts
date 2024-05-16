@@ -8,22 +8,16 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TokenService } from '@src/features/tokens/token.service';
 import { TokenEntity } from '@src/features/tokens/token.entity';
 import { UserRepository } from './repo/user.repository';
-import { AuthGuard } from '@src/guards/auth.guard';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
     imports:[
+        AuthModule,
         ConfigModule,
         TypeOrmModule.forFeature([UserEntity,TokenEntity]),
-        JwtModule.registerAsync({
-            imports:[ConfigModule],
-            inject:[ConfigService],
-            useFactory:(config:ConfigService)=>({
-                secret:config.get<string>("JWT_SECRET")
-            })
-        })
     ],
     providers: [UserService,TokenService,UserRepository],
     controllers:[UserController],
-    exports:[JwtModule,ConfigModule,UserService]
+    exports:[UserService]
 })
 export class UserModule {}

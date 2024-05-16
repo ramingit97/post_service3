@@ -11,6 +11,12 @@ export class UserController {
         private userService:UserService,
     ){}
 
+
+    // @Get('test')
+    // async test(){
+    //     return this.userService.test();
+    // }
+
     @UsePipes(ValidationPipe)
     @Post("register")
     async register(@Body() userData:UserCreateDto,@Res() res){

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: post-service-secret
+  labels:
+    app: post-service-config
+data:
+    TYPEORM_HOST: post-db
+    TYPEORM_PORT: "5432"
+    TYPEORM_USERNAME: postuser
+    TYPEORM_PASSWORD: postpassword
+    TYPEORM_DATABASE: postdb

@@ -6,10 +6,10 @@ import { UserModule } from '@src/features/user/user.module';
 import { TokensModule } from '@src/features/tokens/tokens.module';
 import { ReservService } from './reserv.service';
 import { ReservRepository } from './repo/reserv.repository';
+import { AuthModule } from '../auth/auth.module';
 @Module({
     imports:[
-        UserModule,
-        TokensModule,
+        AuthModule,
         TypeOrmModule.forFeature([ReservationsEntity]),
     ],
     providers: [
