@@ -5,8 +5,8 @@ metadata:
   labels:
     app: post-service-config
 data:
-    TYPEORM_HOST: post-db
+    TYPEORM_HOST: patronidemo
     TYPEORM_PORT: "5432"
-    TYPEORM_USERNAME: postuser
-    TYPEORM_PASSWORD: postpassword
-    TYPEORM_DATABASE: postdb
+    TYPEORM_USERNAME: postgres
+    TYPEORM_PASSWORD: zalando
+    TYPEORM_DATABASE: postgres
